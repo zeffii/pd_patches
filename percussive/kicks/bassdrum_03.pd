@@ -1,0 +1,53 @@
+#N canvas 1288 0 619 613 12;
+#X obj 8 8 cnv 15 600 600 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 133 458 osc~;
+#X obj 37 261 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 296 490 line~;
+#X obj 40 530 output~;
+#X obj 133 496 *~;
+#X obj 37 279 s attack;
+#X obj 296 273 r attack;
+#X msg 421 470 0 \$1;
+#X obj 421 331 vsl 15 128 0 600 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 4600 1;
+#N canvas 0 0 1079 558 (subpatch) 0;
+#X array pitch_env 30 float 3;
+#A 0 2052.6 1042.31 492.592 358.877 284.59 195.447 180.589 180.589
+180.589 165.732 165.732 165.732 165.732 165.732 136.017 136.017 136.018
+136.018 136.018 121.16 121.16 106.303 106.303 106.303 91.4459 91.4459
+91.4459 76.5887 76.5887 76.5887;
+#X coords 0 2100 30 20 400 140 1 0 0;
+#X restore 93 26 graph;
+#X obj 134 357 line~;
+#X obj 133 407 tabread4~ pitch_env;
+#X msg 296 425 0 \, 1 20;
+#X obj 137 206 hsl 128 15 0 200 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3600 1;
+#X msg 134 329 0 \, 1 \$1;
+#X obj 421 293 del;
+#X text 133 189 slope \, pitch drop duration;
+#X text 445 372 decay;
+#X obj 134 382 *~ 50;
+#X obj 134 432 -~ 34;
+#X connect 1 0 5 0;
+#X connect 2 0 6 0;
+#X connect 2 0 14 0;
+#X connect 3 0 5 1;
+#X connect 5 0 4 0;
+#X connect 5 0 4 1;
+#X connect 7 0 13 0;
+#X connect 7 0 16 0;
+#X connect 7 0 15 0;
+#X connect 8 0 3 0;
+#X connect 9 0 8 0;
+#X connect 11 0 19 0;
+#X connect 12 0 20 0;
+#X connect 13 0 3 0;
+#X connect 14 0 16 1;
+#X connect 14 0 15 0;
+#X connect 15 0 11 0;
+#X connect 16 0 9 0;
+#X connect 19 0 12 0;
+#X connect 20 0 1 0;
