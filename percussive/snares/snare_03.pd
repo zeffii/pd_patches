@@ -1,0 +1,94 @@
+#N canvas 267 -1 614 613 12;
+#X obj 8 8 cnv 15 600 600 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 129 400 osc~;
+#X obj 129 24 bng 30 250 50 0 empty empty empty 17 7 0 30 -262144 -1
+-1;
+#X obj 198 432 line~;
+#X obj 121 552 output~;
+#X obj 159 509 *~;
+#X obj 141 57 s attack;
+#X obj 198 195 r attack;
+#X msg 222 398 0 \$1;
+#X obj 263 259 vsl 15 128 0 600 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2600 1;
+#X msg 198 270 0 \, 1 20;
+#X obj 245 221 del;
+#X text 261 400 decay;
+#X obj 23 418 noise~;
+#X obj 158 480 *~;
+#X obj 74 224 0.25;
+#X obj 25 69 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 1900 1;
+#X floatatom 25 224 5 0 0 0 - - -;
+#X text 107 223 phase;
+#X obj 263 56 vsl 15 128 0 200 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 1700 1;
+#X text 260 35 time to peak;
+#X obj 340 245 noise~;
+#X obj 339 275 lop~;
+#X obj 392 249 knob 32 32 0 2700 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 400 1;
+#X obj 392 409 line~;
+#X obj 339 446 *~;
+#X msg 392 376 1 \, 0 \$1;
+#X obj 392 330 knob 32 32 0 500 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 1200 1;
+#X text 431 253 lowpass hz;
+#X text 432 337 line duration 0..500 ms;
+#X obj 221 510 +~;
+#X obj 392 294 t b;
+#X obj 310 134 cnv 15 10 400 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X obj 25 457 hip~;
+#X obj 76 413 knob 32 32 0 7300 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 1300 1;
+#X obj 25 303 osc~;
+#X obj 25 327 +~ 1;
+#X obj 25 351 *~ 0.5;
+#X obj 36 384 *~;
+#X obj 37 258 knob 32 32 0 2 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 3100 1;
+#X connect 1 0 5 1;
+#X connect 2 0 6 0;
+#X connect 2 0 15 0;
+#X connect 2 0 16 0;
+#X connect 2 0 19 0;
+#X connect 2 0 27 0;
+#X connect 2 0 23 0;
+#X connect 2 0 34 0;
+#X connect 2 0 39 0;
+#X connect 3 0 14 1;
+#X connect 5 0 4 0;
+#X connect 5 0 4 1;
+#X connect 7 0 10 0;
+#X connect 7 0 11 0;
+#X connect 8 0 3 0;
+#X connect 9 0 8 0;
+#X connect 10 0 3 0;
+#X connect 11 0 9 0;
+#X connect 13 0 33 0;
+#X connect 14 0 5 0;
+#X connect 15 0 1 1;
+#X connect 15 0 35 1;
+#X connect 16 0 17 0;
+#X connect 17 0 38 1;
+#X connect 19 0 11 1;
+#X connect 21 0 22 0;
+#X connect 22 0 25 0;
+#X connect 23 0 22 1;
+#X connect 23 0 31 0;
+#X connect 24 0 25 1;
+#X connect 25 0 30 1;
+#X connect 26 0 24 0;
+#X connect 27 0 26 0;
+#X connect 30 0 4 0;
+#X connect 30 0 4 1;
+#X connect 31 0 27 0;
+#X connect 33 0 14 0;
+#X connect 34 0 33 1;
+#X connect 35 0 36 0;
+#X connect 36 0 37 0;
+#X connect 37 0 38 0;
+#X connect 38 0 1 0;
+#X connect 39 0 35 0;
